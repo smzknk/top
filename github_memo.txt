@@ -1,0 +1,51 @@
+ローカルリポジトリとリモートリポジトリ
+変更履歴を置く場所=リポジトリ
+
+自身のマシン内=ローカル
+サーバ、ネットワーク=リモート
+
+ローカルで作業を行い、リモートにプッシュする
+
+コミット(commit) =
+プッシュ(push) =リモートにアップロード
+
+・git init
+=>初期化
+
+・git add "コミットしたいファイル名"
+=>ファイルの指定
+
+・git commit -m "コメント"
+=>コメントをする
+=>コメントでバージョン管理をする
+
+・git push origin master
+=>ローカルでコミットしていたものをリモートに送信する
+
+・git add . //すべてのファイル・ディレクトリ
+・git add *.css //すべてのCSSファイル
+・git add -n //追加されるファイルを調べる
+・git add -u //変更されたファイルを追加する
+・git rm --cached //addしてしまったファイルを除外
+
+addしているすべてのファイルに対して、comment??
+
+
+-----
+コミットメッセージの修正
+git rebase -i HEAD~2 // HEADから2件のコミットメッセージ
+vimが起動する
+表示されるコミットメッセージ
+pick {commit_id} {commit_meessage} // 2件目
+pick {commit_id} {commit_meessage} // 1件目(最新コミット)
+pickの部分をeditもしくはeに変更後ファイルを保存し、
+修正が完了したら--amendオプションを付けてコミットする。
+git commit --amend
+完了
+git rebase --continue
+
+addの取り消し
+
+間違えてgit addしてしまった場合はresetでキャンセルできる。
+git reset HEAD 
+git reset HEAD {file_name}
